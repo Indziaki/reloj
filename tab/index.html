@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>Formulario</title>
+<head>
+<style type="text/css">
+</style>
+</head>
+<body>
+    <div>
+        <button id="popUp">PAGAR</button>
+    </div>
+    <script>
+        document.getElementById("popUp").addEventListener("click", openWindow);
+        function openWindow()
+        {
+            var popup = window.open('Sim3DSecure.html');
+            console.log(popup);
+            setInterval(function()
+            {
+                if(popup.closed)
+                {
+                    window.location.href = 'abc93://webpayment/callback?token=XXXXXXX';
+                }
+            }, 300);
+        }
+    </script>
+</body>
+</html>
